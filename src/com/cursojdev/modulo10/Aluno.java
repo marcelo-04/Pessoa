@@ -2,7 +2,7 @@ package com.cursojdev.modulo10;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*Essa é nossa classe/objeto que representa o aluno*/
 public class Aluno extends Pessoa {
 	
 	// Esse são os atributos do Aluno
@@ -30,62 +30,6 @@ public class Aluno extends Pessoa {
 	public Aluno(String nomePadrao, int idadePadra) {
 		nome = nomePadrao;
 		idade = idadePadra;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public String getDataNascimneto() {
-		return dataNascimneto;
-	}
-
-	public void setDataNascimneto(String dataNascimneto) {
-		this.dataNascimneto = dataNascimneto;
-	}
-
-	public String getRegistroGeral() {
-		return registroGeral;
-	}
-
-	public void setRegistroGeral(String registroGeral) {
-		this.registroGeral = registroGeral;
-	}
-
-	public String getNumeroCpf() {
-		return numeroCpf;
-	}
-
-	public void setNumeroCpf(String numeroCpf) {
-		this.numeroCpf = numeroCpf;
-	}
-
-	public String getNomeMae() {
-		return nomeMae;
-	}
-
-	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
-	}
-
-	public String getNomePai() {
-		return nomePai;
-	}
-
-	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
 	}
 
 	public String getDataMatricula() {
@@ -130,7 +74,6 @@ public class Aluno extends Pessoa {
 
 	/**
 	 * Método que retorna true para aprovado e false reprovado.
-	 * 
 	 * @return
 	 */
 	public String getAlunoAprovado() {
@@ -184,5 +127,17 @@ public class Aluno extends Pessoa {
 			return false;
 		return true;
 	}
-
+	/*
+	 * Aula 05 - Anotação @Override e reescrita de método, Identifica método sobreescrito
+	 */
+	@Override
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 21;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Obaa aluno é maior de idade!" :
+			"Ixii você é menor de idade!";
+	}
 }

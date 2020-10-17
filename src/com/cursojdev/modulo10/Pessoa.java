@@ -1,5 +1,7 @@
 package com.cursojdev.modulo10;
-
+/*
+ * Herança - Classe pai ou classe master ou superclasse - (Atributos comuns a todos os objetos filhos).
+ */
 public class Pessoa {
 	
 	protected String nome;
@@ -63,5 +65,8 @@ public class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
-
+	
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	}
 }
