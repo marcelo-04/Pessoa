@@ -131,13 +131,16 @@ public class Aluno extends Pessoa {
 	 * Aula 05 - Anotação @Override e reescrita de método, Identifica método sobreescrito
 	 */
 	@Override
-	public boolean pessoaMaiorIdade() {
-		
+	public boolean pessoaMaiorIdade() {		
 		return idade >= 21;
 	}
 	
 	public String msgMaiorIdade() {
 		return this.pessoaMaiorIdade() ? "Obaa aluno é maior de idade!" :
 			"Ixii você é menor de idade!";
+	}
+	@Override
+	public double salario() {
+		return 1500.90;
 	}
 }
