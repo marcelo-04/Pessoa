@@ -16,6 +16,7 @@ public class TestandoClassesFilhas {
 		
 		Secretario secretario = new Secretario();
 		secretario.setExperiencia("Desevolvimento de Java Web!");
+		secretario.setNome("José");
 		secretario.setNumeroCpf("123.456.7898-00");
 		secretario.setIdade(18);
 		
@@ -30,5 +31,17 @@ public class TestandoClassesFilhas {
 		System.out.println("Salário do Aluno = "+ aluno.salario());
 		System.out.println("Salário do Diretor = "+ diretor.salario());
 		System.out.println("Salário do Secretario = "+ secretario.salario());
+		
+		teste(aluno);
+		teste(diretor);
+		teste(secretario);
+		
+	}
+	
+	/*Esse é um método generico para teste*/
+	public static void teste(Pessoa pessoa) {
+		System.out.println("Essa pessoa é demais ==> " 
+				+ pessoa.getNome()+ " o salário = "
+				+ pessoa.salario());
 	}
 }
