@@ -4,6 +4,7 @@ package com.cursojdev.interfaces.modulo10;
  */
 public interface PermitirAcesso {
 	
-	public boolean autenticar();//Apenas declaração do método.
+	public boolean autenticar(String login, String senha);
+	public boolean autenticar();
 
 }

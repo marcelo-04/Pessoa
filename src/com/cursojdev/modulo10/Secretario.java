@@ -10,7 +10,14 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	private String login;
 	private String senha;
 	
-	
+	public Secretario(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+	}
+
+	public Secretario() {
+	}
+
 	public String getRegistro() {
 		return registro;
 	}
@@ -46,30 +53,17 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	public double salario() {
 		return 1800.80 * 0.9;
 	}
-	/**
-	 * Criando a primeira interface e implementação, esse é o método do contrato de autenticação.
-	 * @return
-	 */
+	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+
 	@Override
 	public boolean autenticar() {
-		//Retorna sim caso login e senha seja admin senão false.
 		return login.equals("admin") && senha.equals("admin");
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 	
 }

@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 
+import com.cursojdev.classesauxiliares.modulo10.FuncaoAutenticacao;
+import com.cursojdev.interfaces.modulo10.PermitirAcesso;
+
 public class TestePessoa {
 
 	public static void main(String[] args) {
@@ -12,13 +15,8 @@ public class TestePessoa {
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 		
-		//Criando a primeira interface e implementação, trabalhando diretamente com o objeto.
-		Secretario secretario = new Secretario();
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		//Se TRUE acesso se FALSE não acessa.
-		if (secretario.autenticar()) {
+		//Travando o contrato para autorizar somente quem realmente tem o contrato 100% legitimo.
+		if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -115,7 +113,7 @@ public class TestePessoa {
 						+ " com média de = " + aluno.getMediaNota());
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Acesso não permitido!");
+			JOptionPane.showMessageDialog(null, "Acesso Negado!");
 		}
 	}
 }
