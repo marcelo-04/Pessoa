@@ -11,13 +11,18 @@ public class TestePessoa {
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-
-		if (login.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")) {
+		
+		//Criando a primeira interface e implementação, trabalhando diretamente com o objeto.
+		Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		//Se TRUE acesso se FALSE não acessa.
+		if (secretario.autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
-			// É uma lista que dentro dela temos uma chave que identifica uma sequencia de
-			// valores também.
+			//É uma lista que dentro dela temos uma chave que identifica uma sequencia devalores também.
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
 			for (int qtd = 1; qtd <= 3; qtd++) {
@@ -109,6 +114,8 @@ public class TestePessoa {
 				System.out.println("Resultado = " + aluno.getNome() + " está em " + aluno.getAlunoAprovado()
 						+ " com média de = " + aluno.getMediaNota());
 			}
+		} else {
+			JOptionPane.showMessageDialog(null, "Acesso não permitido!");
 		}
 	}
 }
